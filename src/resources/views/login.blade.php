@@ -9,7 +9,7 @@
     <div class="login-form__heading">
         <h2>ログイン</h2>
     </div>
-    <form class="form" action="{{ route('login') }}" method="post">
+    <form class="login-form" action="{{ route('login') }}" method="post">
         @csrf
         <div class="form__group">
             <div class="form__group-title">
@@ -17,7 +17,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
-                    <input type="email" name="email" value="{{ old('name') }}"/>
+                    <input type="email" name="email" value="{{ old('email') }}"/>
                 </div>
                 <div class="form__error">
                     @error('email')

@@ -1,0 +1,46 @@
+@extends('layouts.app')
+
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/mypage.css') }}">
+@endsection
+
+@section('content')
+<div class="profile-setting_content">
+    <div class="profile-setting__heading">
+        <h1>プロフィール設定</h1>
+    </div>
+    <form class="profile-setting_form" action="{{ route('mypage') }}" method="post" enctype="multipart/form-data">
+        @csrf
+        <div class="form__group">
+            <div class="form__image--content">
+                @if(Auth::user()->image)
+                    <img src="{{ asset('storage/' . Auth::user()->image) }}" alt="profile_image" width="120">
+                @else
+                    <p class="no-image">画像未設定</p>
+                @endif
+            </div>
+            <div class="form__label--content">
+                <span class="form__label--item">画像を選択する</span>
+                <input type="file" name="image">
+            </div>
+            <div class="form__label--content">
+                <span class="form__label--item">ユーザー名</span>
+                <input type="text" name="name" value="{{ old('name', Auth::user()->name) }}">
+            </div>
+            <div class="form__label--content">
+                <span class="form__label--item">郵便番号</span>
+                <input type="text" name="postal_code" value="{{ old('postal_code', Auth::user()->postal_code) }}">
+            </div>
+            <div class="form__label--content">
+                <span class="form__label--item">住所</span>
+                <input type="text" name="address" value="{{ old('address', Auth::user()->address) }}">
+            </div>
+            <div class="form__label--content">
+                <span class="form__label--item">建物名</span>
+                <input type="text" name="building" value="{{ old('building', Auth::user()->building) }}">
+            </div>
+            <button class="profile_update" type="submit">更新する</button>
+        </div>
+    </form>
+</div>
+@endsection

@@ -10,12 +10,8 @@
 </head>
 <body>
     <header class="header">
-        <div class="header__inner">
-            <a class="header__logo" href="/">
-                COACHTECH</a>
-        </div>
+        <div class="header__inner">COACHTECH</div>
     </header>
-
     <main>
         @yield('content')
     </main>
