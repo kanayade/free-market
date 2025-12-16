@@ -11,4 +11,11 @@ class ItemController extends Controller
         $products = Product::all();
         return view('products',compact('products'));
     }
+    public function show($item_id)
+    {
+        $product = Product::findOrFail($item_id);
+
+        return view('item', compact('product'));
+    }
+
 }

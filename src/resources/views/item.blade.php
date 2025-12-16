@@ -18,7 +18,7 @@
                 <span class="product-likes">♡ {{ $product->likes ?? 0 }}</span>
                 <span class="product-comment">💬 {{ $product->comments->count() ?? 0 }}</span>
             </div>
-                <form class="product-purchase" action="{{ route('purchase', $product->id) }}" method="post">
+                <form class="product-purchase" action="{{ url('/purchase/' . $product->id) }}" method="get">
                     @csrf
                     <button class="product-purchase_button">購入手続きへ</button>
                 </form>
@@ -30,7 +30,7 @@
         </div>
     </div>
     <div class="comment-area">
-        <h3 class="product-comment">コメント( {{ $product->comments->count() }} )</h3>
+        <h3 class="product-comment">コメント( {{ optional($product->comments)->count() ?? 0 }} )</h3>
         @foreach($product->comments as $comment)
             <div class="comment-item">
                 <span class="comment-user">{{ $comment->user->name }}</span>
