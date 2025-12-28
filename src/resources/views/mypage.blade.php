@@ -9,7 +9,7 @@
     <div class="profile-setting__heading">
         <h1>プロフィール設定</h1>
     </div>
-    <form class="profile-setting_form" action="{{ route('mypage') }}" method="post" enctype="multipart/form-data">
+    <form class="profile-setting_form" action="/mypage" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form__group">
             <div class="form__image--content">

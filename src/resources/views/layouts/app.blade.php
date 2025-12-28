@@ -12,7 +12,7 @@
     <header class="header_free-market">
         <div class="header__inner">COACHTECH</div>
         <div class="header__search">
-            <form action="/products" method="get" enctype="multipart/form-data">
+            <form action="/" method="get" enctype="multipart/form-data">
                 <input class="search_enter" type="text" name="keyword" placeholder="なにをお探しですか？" value="{{ request('keyword') }}">
             </form>
         </div>

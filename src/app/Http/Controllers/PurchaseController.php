@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class PurchaseController extends Controller
 {
@@ -13,6 +15,6 @@ class PurchaseController extends Controller
     }
     public function store(Request $request,$item_id)
     {
-        
+        //
     }
 }

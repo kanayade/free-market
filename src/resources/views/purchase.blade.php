@@ -14,7 +14,7 @@
     </div>
     <p class="product_price">¥ {{ number_format($product->price) }}</p>
     <hr>
-    <form class="product_purchase" action="{{ route('purchase.store', $product->id) }}" method="post">
+    <form class="product_purchase" action="/" method="post">
         @csrf
         <div class="purchase_payment_method">
             <h3 class="payment_which">支払い方法</h3>
@@ -30,7 +30,7 @@
             <p class="address_postal-code">〒 {{ Auth::user()->postal_code }}</p>
             <p class="address">{{ Auth::user()->address }}</p>
             <p class="address_building">{{ Auth::user()->building }}</p>
-            <a href="{{ route('changed_address') }}">変更する</a>
+            <a href="/changed_address">変更する</a>
         </div>
         <hr>
         <div class="purchase_summary">

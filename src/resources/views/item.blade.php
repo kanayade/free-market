@@ -8,7 +8,7 @@
 <div class="product-detail">
     <div class="detail-wrapper">
         <div class="detail-image">
-            <img src="{{ asset('storage/product/'.$product->image) }}" alt="{{ $product->name }}">
+            <img src="{{ asset('storage/products/'.$product->image_path) }}" alt="{{ $product->name }}">
         </div>
         <div class="detail-info">
             <h2 class="product-title">{{ $product->name }}</h2>
@@ -38,7 +38,7 @@
             </div>
         @endforeach
         @auth
-            <form class="comment-send" action="{{ route('comment.store', $product->id) }}" method="post">
+            <form class="comment-send" action="/" method="post">
                 @csrf
                 <textarea name="comment" cols="30" rows="5"></textarea>
                 <button class="comment-send_button">コメントを送信する</button>
