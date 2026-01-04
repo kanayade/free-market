@@ -1,0 +1,201 @@
+/* 全体 */
+.product-detail {
+    max-width: 900px;
+    margin: 40px auto 80px;
+    padding: 0 16px;
+}
+
+/* 上段：画像＋情報 */
+.detail-wrapper {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+}
+
+/* 画像 */
+.detail-image {
+    width: 45%;
+}
+
+.detail-image img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    background: #ddd;
+    border-radius: 4px;
+}
+
+/* 右側情報 */
+.detail-info {
+    width: 55%;
+}
+
+.product-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0 0 6px;
+}
+
+.product-brand {
+    font-size: 13px;
+    color: #666;
+    margin: 0 0 12px;
+}
+
+.product-price {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 12px;
+}
+
+/* いいね・コメント数 */
+.detail-icons {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.product-likes,
+.product-comment {
+    color: #333;
+}
+
+/* 購入ボタン */
+.product-purchase_button {
+    width: 100%;
+    padding: 12px;
+    background: #ff5a5a;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+.product-purchase_button:hover {
+    opacity: 0.9;
+}
+
+/* 見出し（商品説明 / 商品の情報） */
+.detail-info h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 18px 0 10px;
+}
+
+/* 商品説明 */
+.seller-comment {
+    font-size: 13px;
+    color: #333;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+/* 商品情報 */
+.product-category,
+.product-condition {
+    font-size: 13px;
+    margin: 6px 0;
+}
+
+/* コメントエリア */
+.comment-area {
+    margin-top: 40px;
+}
+
+.comment-area h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+/* コメント1件 */
+.comment-item {
+    margin-bottom: 14px;
+}
+
+.comment-user {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.comment-detail {
+    background: #eee;
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    margin: 0;
+}
+
+/* コメント送信フォーム */
+.comment-send {
+    margin-top: 24px;
+}
+
+.comment-send textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* 送信ボタン */
+.comment-send_button {
+    width: 100%;
+    margin-top: 16px;
+    padding: 12px;
+    background: #ff5a5a;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.comment-send_button:hover {
+    opacity: 0.9;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .detail-wrapper {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .detail-image,
+    .detail-info {
+        width: 100%;
+    }
+}
+/* いいね・コメントのアイコン全体 */
+.detail-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* アイコン＋数字 */
+.product-likes,
+.product-comment {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+}
+
+/* ハート・吹き出し画像のサイズ調整 */
+.product-likes img,
+.product-comment img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}

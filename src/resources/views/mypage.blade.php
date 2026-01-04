@@ -21,7 +21,7 @@
             </div>
             <div class="form__label--content">
                 <span class="form__label--item">画像を選択する</span>
-                <input type="file" name="image">
+                <input type="file" name="user_image">
             </div>
             <div class="form__label--content">
                 <span class="form__label--item">ユーザー名</span>

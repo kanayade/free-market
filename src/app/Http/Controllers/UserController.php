@@ -10,6 +10,16 @@ class UserController extends Controller
 {
     public function index()
     {
-        return view('mypage');
+        $user = Auth::user();
+        return view('mypage', compact('user'));
+    }
+    public function store(Request $request)
+    {
+        $user = Auth::user();
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('users', 'public');
+        }
+        $user->update;
+        return redirect('/');
     }
 }

@@ -15,8 +15,10 @@
             <p class="product-brand">{{ $product->brand }}</p>
             <p class="product-price">¥{{ number_format($product->price) }}（税込）</p>
             <div class="detail-icons">
-                <span class="product-likes">♡ {{ $product->likes ?? 0 }}</span>
-                <span class="product-comment">💬 {{ $product->comments->count() ?? 0 }}</span>
+                <span class="product-likes">
+                    <img src="{{ asset('storage/products/ハートロゴ_デフォルト.png') }}">  {{ $product->likes ?? 0 }}</span>
+                <span class="product-comment">
+                    <img src="{{ asset('storage/products/ふきだしロゴ.png') }}"> {{ $product->comments->count() ?? 0 }}</span>
             </div>
                 <form class="product-purchase" action="{{ url('/purchase/' . $product->id) }}" method="get">
                     @csrf

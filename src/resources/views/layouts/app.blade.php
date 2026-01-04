@@ -10,7 +10,9 @@
 </head>
 <body>
     <header class="header_free-market">
-        <div class="header__inner">COACHTECH</div>
+        <div class="header__inner">
+            <img src="{{ asset('storage/products/COACHTECHヘッダーロゴ.png') }}">
+        </div>
         <div class="header__search">
             <form action="/" method="get" enctype="multipart/form-data">
                 <input class="search_enter" type="text" name="keyword" placeholder="なにをお探しですか？" value="{{ request('keyword') }}">

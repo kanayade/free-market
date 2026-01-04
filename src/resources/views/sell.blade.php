@@ -21,7 +21,7 @@
             <span class="product__detail--title">カテゴリー</span>
             @foreach($categories as $category)
                 <label class="product__category--select">
-                    <input type="radio" name="category_id" value="{{ $category->id }}">
+                    <input type="checkbox" name="category_id[]" value="{{ $category->id }}">
                     {{ $category->name }}
                 </label>
             @endforeach

@@ -9,12 +9,12 @@
     <div class="changed_address-heading">
         <h2>住所の変更</h2>
     </div>
-    <form class="changed_address-form" action="{{ route('') }}" method="post">
+    <form class="changed_address-form" action="/changed_address" method="post">
         @csrf
         @method('put')
         <div class="form__group">
             <div class="form__label--title">
-                <span class="form__lable--item">郵便番号</span>
+                <span class="form__label--item">郵便番号</span>
                 <input type="text" name="postal_code" value="{{ old('postal_code', Auth::user()->postal_code) }}">
             </div>
         </div>

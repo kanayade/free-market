@@ -1,0 +1,88 @@
+/* ページ全体 */
+.product-page {
+    width: 100%;
+    padding: 24px 0 60px;
+    background: #fff;
+}
+
+/* タブメニュー */
+.tab-menu {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    justify-content: flex-start;
+
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 12px 16px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+/* タブの見た目 */
+.tab-menu a {
+    font-size: 14px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* 選択中っぽく見せたい方を赤に（今回はマイリストを赤） */
+.tab-menu .mylist {
+    color: #ff5a5a;
+}
+
+/* 商品一覧（グリッド） */
+.product-list {
+    max-width: 900px;
+    margin: 32px auto 0;
+    padding: 0 16px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 48px;
+}
+
+/* 商品カード */
+.product-card a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+}
+
+/* 画像 */
+.product-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    /* 正方形にする */
+    object-fit: cover;
+    /* 画像をいい感じにトリミング */
+    background: #ddd;
+    /* 画像がない時の保険 */
+    border-radius: 4px;
+}
+
+/* 商品名 */
+.product-name {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+/* ちょいホバー */
+.product-card a:hover img {
+    opacity: 0.9;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .product-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-list {
+        grid-template-columns: 1fr;
+    }
+}
