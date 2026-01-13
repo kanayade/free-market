@@ -1,0 +1,113 @@
+/* 全体 */
+.profile-setting_content {
+    max-width: 650px;
+    margin: 40px auto 80px;
+    padding: 0 16px;
+    background: #fff;
+}
+
+/* 見出し */
+.profile-setting__heading {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.profile-setting__heading h1 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* フォーム */
+.profile-setting_form {
+    width: 100%;
+}
+
+/* まとめ */
+.form__group {
+    width: 100%;
+}
+
+/* 画像エリア：丸アイコンっぽく */
+.form__image--content {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #ddd;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 14px;
+}
+
+.form__image--content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 画像未設定 */
+.no-image {
+    font-size: 12px;
+    color: #666;
+    margin: 0;
+}
+
+/* 1項目 */
+.form__label--content {
+    margin-bottom: 18px;
+}
+
+/* ラベル */
+.form__label--item {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* 入力欄 */
+.form__label--content input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* ファイル選択：見た目をFigmaの「ボタン」っぽく */
+.form__label--content input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ff5a5a;
+    border-radius: 6px;
+    background: #fff;
+    color: #ff5a5a;
+    font-size: 13px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+/* 更新ボタン */
+.profile_update {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+
+    background: #ff5a5a;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.profile_update:hover {
+    opacity: 0.9;
+}

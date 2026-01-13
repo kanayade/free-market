@@ -34,4 +34,6 @@ Route::delete('/items/{item}/favorite', [FavoriteController::class, 'destroy']);
 // プロフ画面
 Route::get('/mypage',[UserController::class,'index']);
 Route::post('/mypage',[UserController::class,'store']);
+Route::get('/mypage/edit',[UserController::class,'edit']);
+
 });

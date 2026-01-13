@@ -5,42 +5,56 @@
 @endsection
 
 @section('content')
-<div class="profile-setting_content">
-    <div class="profile-setting__heading">
-        <h1>プロフィール設定</h1>
+<div class="mypage">
+    <div class="mypage__profile">
+        <div class="mypage__icon">
+        @if($user->profile_photo_url)
+            <img src="{{ $user->profile_photo_url }}" alt="アイコン">
+        @else
+            <div class="mypage__icon-placeholder"></div>
+        @endif
+        </div>
+        <h2 class="mypage__name">{{ $user->name }}</h2>
+        <a class="mypage__edit" href="/mypage/edit">プロフィールを編集</a>
     </div>
-    <form class="profile-setting_form" action="/mypage" method="post" enctype="multipart/form-data">
-        @csrf
-        <div class="form__group">
-            <div class="form__image--content">
-                @if(Auth::user()->image)
-                    <img src="{{ asset('storage/' . Auth::user()->image) }}" alt="profile_image" width="120">
+    <nav class="mypage__tabs">
+        <a class="mypage__tab {{ $page === 'sell' ? 'is-active' : '' }}"
+        href="/mypage?page=sell">出品した商品</a>
+        <a class="mypage__tab {{ $page === 'buy' ? 'is-active' : '' }}"
+        href="/mypage?page=buy">購入した商品</a>
+    </nav>
+    <div class="mypage__grid">
+        @if($page === 'buy')
+        @forelse($buyItems as $item)
+        <div class="mypage__card">
+            <div class="mypage__thumb">
+                @if($item->image)
+                <img src="{{ asset('storage/' . $item->image) }}" alt="商品画像">
                 @else
-                    <p class="no-image">画像未設定</p>
+                <div class="mypage__thumb-placeholder">商品画像</div>
                 @endif
             </div>
-            <div class="form__label--content">
-                <span class="form__label--item">画像を選択する</span>
-                <input type="file" name="user_image">
-            </div>
-            <div class="form__label--content">
-                <span class="form__label--item">ユーザー名</span>
-                <input type="text" name="name" value="{{ old('name', Auth::user()->name) }}">
-            </div>
-            <div class="form__label--content">
-                <span class="form__label--item">郵便番号</span>
-                <input type="text" name="postal_code" value="{{ old('postal_code', Auth::user()->postal_code) }}">
-            </div>
-            <div class="form__label--content">
-                <span class="form__label--item">住所</span>
-                <input type="text" name="address" value="{{ old('address', Auth::user()->address) }}">
-            </div>
-            <div class="form__label--content">
-                <span class="form__label--item">建物名</span>
-                <input type="text" name="building" value="{{ old('building', Auth::user()->building) }}">
-            </div>
-            <button class="profile_update" type="submit">更新する</button>
+            <p class="mypage__item-name">{{ $item->name }}</p>
         </div>
-    </form>
+        @empty
+            <p>購入した商品はありません</p>
+        @endforelse
+        @else
+        @forelse($sellItems as $item)
+        <div class="mypage__card">
+            <div class="mypage__thumb">
+                @if($item->image)
+                <img src="{{ asset('storage/' . $item->image) }}" alt="商品画像">
+                @else
+                <div class="mypage__thumb-placeholder">商品画像</div>
+                @endif
+            </div>
+            <p class="mypage__item-name">{{ $item->name }}</p>
+        </div>
+        @empty
+            <p>出品した商品はありません</p>
+        @endforelse
+        @endif
+    </div>
 </div>
 @endsection
