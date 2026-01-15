@@ -16,6 +16,7 @@ use App\Http\Controllers\UserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 // 商品一覧画面
 Route::get('/',[ItemController::class,'index']);
 // 商品詳細画面
@@ -33,7 +34,6 @@ Route::post('/items/{item}/favorite', [FavoriteController::class, 'store']);
 Route::delete('/items/{item}/favorite', [FavoriteController::class, 'destroy']);
 // プロフ画面
 Route::get('/mypage',[UserController::class,'index']);
-Route::post('/mypage',[UserController::class,'store']);
+Route::post('/mypage',[UserController::class,'update']);
 Route::get('/mypage/edit',[UserController::class,'edit']);
-
 });

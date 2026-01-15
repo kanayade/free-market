@@ -1,11 +1,9 @@
-/* 全体 */
 .product-sell_content {
     max-width: 650px;
     margin: 40px auto 80px;
     padding: 0 16px;
 }
 
-/* 見出し */
 .product-sell_heading {
     text-align: center;
     margin-bottom: 24px;
@@ -17,26 +15,22 @@
     margin: 0;
 }
 
-/* フォーム */
 .product-sell_form {
     width: 100%;
 }
 
-/* 区切り線 */
 hr {
     border: none;
     border-top: 1px solid #ddd;
     margin: 24px 0;
 }
 
-/* セクション見出し（商品の詳細 / 商品名と詳細） */
 .product_detail {
     font-size: 14px;
     font-weight: bold;
     margin: 0 0 14px;
 }
 
-/* ラベル */
 .product__detail--title {
     display: block;
     font-size: 13px;
@@ -44,7 +38,6 @@ hr {
     margin: 14px 0 8px;
 }
 
-/* 画像アップロード */
 .product_image {
     margin-top: 10px;
 }
@@ -58,7 +51,6 @@ hr {
     background: #fff;
 }
 
-/* カテゴリー（タグ風） */
 .product_category {
     margin-top: 10px;
 }
@@ -79,14 +71,12 @@ hr {
     user-select: none;
 }
 
-/* チェックボックスをそれっぽく小さく */
 .product__category--select input[type="checkbox"] {
     width: 14px;
     height: 14px;
     accent-color: #ff5a5a;
 }
 
-/* 状態select */
 .product__condition select {
     width: 100%;
     max-width: 420px;
@@ -97,7 +87,6 @@ hr {
     background: #fff;
 }
 
-/* 入力（商品名・ブランド・価格） */
 .product_content input[type="text"],
 .product_content input[type="number"] {
     width: 100%;
@@ -108,7 +97,6 @@ hr {
     box-sizing: border-box;
 }
 
-/* textarea */
 .product_content textarea {
     width: 100%;
     min-height: 120px;
@@ -120,12 +108,10 @@ hr {
     box-sizing: border-box;
 }
 
-/* 価格の「¥」とinputの並びを整える */
 .product_content input[type="number"] {
     max-width: 260px;
 }
 
-/* 出品ボタン */
 .product__sell--button {
     display: block;
     width: 100%;
@@ -145,7 +131,6 @@ hr {
     opacity: 0.9;
 }
 
-/* スマホでも見やすく */
 @media (max-width: 480px) {
     .product-sell_content {
         margin-top: 24px;

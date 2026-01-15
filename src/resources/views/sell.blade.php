@@ -13,7 +13,7 @@
     @csrf
         <div class="product_image">
             <span class="product__detail--title">商品画像</span>
-            <input type="file" name="image">
+            <input type="file" name="image_path">
         </div>
         <hr>
         <h2 class="product_detail">商品の詳細</h2>

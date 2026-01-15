@@ -8,11 +8,7 @@
 <div class="mypage">
     <div class="mypage__profile">
         <div class="mypage__icon">
-        @if($user->profile_photo_url)
-            <img src="{{ $user->profile_photo_url }}" alt="アイコン">
-        @else
-            <div class="mypage__icon-placeholder"></div>
-        @endif
+            <img src="{{ asset('storage/' . $user->user_image) }}" alt="アイコン">
         </div>
         <h2 class="mypage__name">{{ $user->name }}</h2>
         <a class="mypage__edit" href="/mypage/edit">プロフィールを編集</a>

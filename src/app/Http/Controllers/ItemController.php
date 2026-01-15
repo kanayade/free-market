@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -25,6 +26,17 @@ class ItemController extends Controller
     }
     public function store(Request $request)
     {
-        //
+        $data = [
+            'user_id' => Auth::id(),
+            'name' => $request->input('name'),
+            'brand' => $request->input('brand'),
+            'description' => $request->input('description'),
+            'price' => $request->input('price'),
+            'condition' => $request->input('condition'),
+            'image_path' => $request->input('image_path')
+        ];
+        $products = Product::create($data);
+        $product->categories()->attach($request->input('category_id'));
+        return redirect('/');
     }
 }

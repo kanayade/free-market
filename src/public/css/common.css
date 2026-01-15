@@ -1,4 +1,3 @@
-/* ヘッダー全体 */
 .header_free-market {
     background: #000;
     height: 60px;
@@ -8,17 +7,14 @@
     padding: 0 20px;
 }
 
-/* ロゴ */
 .header__inner img {
     height: 28px;
     width: auto;
     display: block;
 }
 
-/* 検索エリア（中央寄せ） */
 .header__search {
     flex: 1;
-    /* 真ん中を伸ばす */
     display: flex;
     justify-content: center;
 }
@@ -38,14 +34,12 @@
     outline: none;
 }
 
-/* 右側リンクエリア（いま div にクラスがないので header_free-market 直下の最後のdivを想定） */
 .header_free-market>div:last-child {
     display: flex;
     align-items: center;
     gap: 18px;
 }
 
-/* 右側リンク（ログアウト/マイページ/ログイン） */
 .header__logout,
 .header__mypage,
 .header__login {
@@ -60,7 +54,6 @@
     opacity: 0.85;
 }
 
-/* 出品ボタン */
 .header__sell {
     display: inline-flex;
     align-items: center;
@@ -80,7 +73,6 @@
     opacity: 0.9;
 }
 
-/* ログアウトフォームは見せない */
 .logout_form {
     display: none;
 }

@@ -13,11 +13,7 @@
         @csrf
         <div class="form__group">
             <div class="form__image--content">
-                @if(Auth::user()->image)
-                    <img src="{{ asset('storage/' . Auth::user()->image) }}" alt="profile_image" width="120">
-                @else
-                    <p class="no-image">画像未設定</p>
-                @endif
+                <img src="{{ asset('storage/' . $user->user_image) }}" alt="アイコン">
             </div>
             <div class="form__label--content">
                 <span class="form__label--item">画像を選択する</span>

@@ -5,6 +5,7 @@ use App\Models\User;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 
 class UserController extends Controller
@@ -22,13 +23,24 @@ class UserController extends Controller
 
         return view('mypage', compact('user','page','sellItems','buyItems'));
     }
-    public function store(Request $request)
+    public function update(Request $request)
     {
         $user = Auth::user();
-        if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('users', 'public');
+        $data = [
+        'name' => $request->input('name'),
+        'postal_code' => $request->input('postal_code'),
+        'address' => $request->input('address'),
+        'building' => $request->input('building'),
+        ];
+        if ($request->hasFile('user_image')) {
+            if ($user->user_image) {
+            Storage::disk('public')->delete($user->user_image);
         }
-        $user->update;
+        $data['user_image'] = $request
+            ->file('user_image')
+            ->store('users', 'public');
+        }
+        $user->update($data);
         return redirect('/');
     }
     public function edit()

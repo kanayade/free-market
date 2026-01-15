@@ -1,4 +1,3 @@
-/* 全体 */
 .profile-setting_content {
     max-width: 650px;
     margin: 40px auto 80px;
@@ -6,7 +5,6 @@
     background: #fff;
 }
 
-/* 見出し */
 .profile-setting__heading {
     text-align: center;
     margin-bottom: 28px;
@@ -18,17 +16,14 @@
     margin: 0;
 }
 
-/* フォーム */
 .profile-setting_form {
     width: 100%;
 }
 
-/* まとめ */
 .form__group {
     width: 100%;
 }
 
-/* 画像エリア：丸アイコンっぽく */
 .form__image--content {
     width: 120px;
     height: 120px;
@@ -49,19 +44,16 @@
     object-fit: cover;
 }
 
-/* 画像未設定 */
 .no-image {
     font-size: 12px;
     color: #666;
     margin: 0;
 }
 
-/* 1項目 */
 .form__label--content {
     margin-bottom: 18px;
 }
 
-/* ラベル */
 .form__label--item {
     display: block;
     font-size: 13px;
@@ -69,7 +61,6 @@
     margin-bottom: 8px;
 }
 
-/* 入力欄 */
 .form__label--content input[type="text"] {
     width: 100%;
     padding: 10px;
@@ -79,7 +70,6 @@
     box-sizing: border-box;
 }
 
-/* ファイル選択：見た目をFigmaの「ボタン」っぽく */
 .form__label--content input[type="file"] {
     display: block;
     width: 100%;
@@ -93,7 +83,6 @@
     box-sizing: border-box;
 }
 
-/* 更新ボタン */
 .profile_update {
     width: 100%;
     margin-top: 20px;

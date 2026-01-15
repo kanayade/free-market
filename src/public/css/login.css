@@ -1,4 +1,3 @@
-/* 全体 */
 .login-form__content {
     max-width: 500px;
     margin: 80px auto;
@@ -6,7 +5,6 @@
     background: #fff;
 }
 
-/* 見出し */
 .login-form__heading {
     text-align: center;
     margin-bottom: 40px;
@@ -17,12 +15,10 @@
     font-weight: bold;
 }
 
-/* フォーム */
 .login-form {
     width: 100%;
 }
 
-/* 入力グループ */
 .form__group {
     margin-bottom: 24px;
 }
@@ -37,7 +33,6 @@
     font-weight: bold;
 }
 
-/* input */
 .form__input--text input {
     width: 100%;
     padding: 10px;
@@ -46,14 +41,12 @@
     font-size: 14px;
 }
 
-/* エラーメッセージ */
 .form__error {
     margin-top: 6px;
     color: #ff5555;
     font-size: 13px;
 }
 
-/* ボタン */
 .form__button {
     margin-top: 32px;
 }
@@ -73,7 +66,6 @@
     opacity: 0.9;
 }
 
-/* 会員登録リンク */
 .register-form__attend {
     margin-top: 24px;
     text-align: center;

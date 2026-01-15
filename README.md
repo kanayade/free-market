@@ -1,4 +1,4 @@
-# mogitate-project
+# free-market
 
 ## 環境構築
 ### リポジトリの設定
@@ -66,9 +66,6 @@ DB_PORT=3306
 ・Laravel 10.x<br>
 ・MySQL 8.0<br>
 ・Docker / Docker Compose<br>
-
-## ER図
-![ER 図](free-market.png)
 
 
 ## URL
