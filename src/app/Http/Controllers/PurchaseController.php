@@ -17,4 +17,20 @@ class PurchaseController extends Controller
     {
         //
     }
+    public function edit($item_id)
+    {
+        $user = Auth::user();
+        $product = Product::findOrFail($item_id);
+        return view('changed_address', compact('user','product'));
+    }
+    public function update(Request $request, $item_id)
+    {
+        $user = Auth::user();
+        $user->update([
+            'postal_code' => $request->input('postal_code'),
+            'address'     => $request->input('address'),
+            'building'    => $request->input('building'),
+        ]);
+        return redirect("/purchase/{$item_id}");
+    }
 }

@@ -8,15 +8,19 @@ use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::all();
-        return view('products', compact('products'));
+        $keyword = $request->input('keyword');
+        $products = Product::with('categories')
+        ->when($keyword, function ($query, $keyword) {
+            $query->where('name', 'LIKE', "%{$keyword}%");
+        })
+        ->get();
+        return view('products', compact('products','keyword'));
     }
     public function show($item_id)
     {
         $product = Product::findOrFail($item_id);
-
         return view('item', compact('product'));
     }
     public function create()
@@ -26,16 +30,16 @@ class ItemController extends Controller
     }
     public function store(Request $request)
     {
-        $data = [
+        $path = $request->file('image_path')->store('products', 'public');
+        $product = Product::create([
             'user_id' => Auth::id(),
             'name' => $request->input('name'),
             'brand' => $request->input('brand'),
             'description' => $request->input('description'),
             'price' => $request->input('price'),
             'condition' => $request->input('condition'),
-            'image_path' => $request->input('image_path')
-        ];
-        $products = Product::create($data);
+            'image_path' => $path
+        ]);
         $product->categories()->attach($request->input('category_id'));
         return redirect('/');
     }

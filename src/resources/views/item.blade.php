@@ -8,10 +8,10 @@
 <div class="product-detail">
     <div class="detail-wrapper">
         <div class="detail-image">
-            <img src="{{ asset('storage/products/'.$product->image_path) }}" alt="{{ $product->name }}">
+            <img src="{{ asset('storage/'.$product->image_path) }}" alt="{{ $product->name }}">
         </div>
         <div class="detail-info">
-            <h2 class="product-title">{{ $product->name }}</h2>
+            <h1 class="product-title">{{ $product->name }}</h1>
             <p class="product-brand">{{ $product->brand }}</p>
             <p class="product-price">¥{{ number_format($product->price) }}（税込）</p>
             <div class="detail-icons">
@@ -24,11 +24,27 @@
                     @csrf
                     <button class="product-purchase_button">購入手続きへ</button>
                 </form>
-            <h3 class="product-detail">商品説明</h3>
-                <div class="seller-comment">??</div>
-            <h3 class="product-detail">商品の情報</h3>
-            <p class="product-category">カテゴリー{{ $product->category }}</p>
-            <p class="product-condition">商品の状態{{ $product->condition }}</p>
+            <div class="product-section">
+                <h2 class="product-section__title">商品説明</h2>
+                <p class="product-description">{{ $product->description }}</p>
+                <h2 class="product-section__title">商品の情報</h2>
+                <div class="product-meta">
+                    <div class="product-meta__row">
+                        <span class="product-meta__label">カテゴリー</span>
+                        <div class="product-meta__value">
+                            @foreach($product->categories as $category)
+                            <span class="category-tag">{{ $category->name }}</span>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="product-meta__row">
+                        <span class="product-meta__label">商品の状態</span>
+                        <span class="product-meta__value">
+                        {{ $product->condition_label }}
+                        </span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="comment-area">

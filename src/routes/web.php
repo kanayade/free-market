@@ -23,6 +23,8 @@ Route::get('/item/{item_id}',[ItemController::class,'show']);
 Route::middleware('auth')->group(function () {
 Route::get('/purchase/{item_id}', [PurchaseController::class, 'index']);
 Route::post('/purchase/{item_id}', [PurchaseController::class, 'store']);
+Route::get('/purchase/address/{item_id}', [PurchaseController::class, 'edit']);
+Route::post('/purchase/address/{item_id}', [PurchaseController::class, 'update']);
 Route::get('/sell', [ItemController::class, 'create']);
 Route::post('/', [ItemController::class, 'store']);
 Route::post('/items/{item}/favorite', [FavoriteController::class, 'store']);

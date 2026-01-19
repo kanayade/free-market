@@ -7,13 +7,12 @@
 @section('content')
 <div class="purchase_content">
 
-    <form class="product_purchase" action="/" method="post">
+    <form class="product_purchase" action="/purchase/{{ $product->id }}/checkout" method="post">
         @csrf
-
         <div class="purchase_left">
             <div class="purchase_item">
                 <div class="product_image">
-                    <img src="{{ asset('storage/products/' . $product->image_path) }}"
+                    <img src="{{ asset('storage/' . $product->image_path) }}"
                         alt="{{ $product->name }}">
                 </div>
                 <div class="purchase_item-info">
@@ -34,7 +33,7 @@
             <div class="purchase_address">
                 <div class="purchase_address-head">
                     <h3 class="shipping_address">配送先</h3>
-                    <a href="/changed_address">変更する</a>
+                    <a href="/purchase/address/{{ $product->id }}">変更する</a>
                 </div>
                 <p class="address_postal-code">〒 {{ Auth::user()->postal_code }}</p>
                 <p class="address">{{ Auth::user()->address }}</p>
@@ -57,7 +56,6 @@
         </div>
     </form>
 </div>
-
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 const select = document.getElementById('paymentSelect');
