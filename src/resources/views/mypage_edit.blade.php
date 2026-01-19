@@ -13,7 +13,7 @@
         @csrf
         <div class="form__group">
             <div class="form__image--content">
-                <img src="{{ asset('storage/' . $user->user_image) }}" alt="アイコン">
+                <img src="{{ asset('storage/' . ($user->user_image ?? 'users/default_gray.png')) }}" alt="アイコン">
             </div>
             <div class="form__label--content">
                 <span class="form__label--item">画像を選択する</span>

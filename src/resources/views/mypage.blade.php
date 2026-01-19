@@ -8,7 +8,8 @@
 <div class="mypage">
     <div class="mypage__profile">
         <div class="mypage__icon">
-            <img src="{{ asset('storage/' . $user->user_image) }}" alt="アイコン">
+            <img src="{{ asset('storage/' . ($user->user_image ?? 'users/default_gray.png')) }}" alt="アイコン"
+            >
         </div>
         <h2 class="mypage__name">{{ $user->name }}</h2>
         <a class="mypage__edit" href="/mypage/edit">プロフィールを編集</a>
@@ -24,8 +25,8 @@
         @forelse($buyItems as $item)
         <div class="mypage__card">
             <div class="mypage__thumb">
-                @if($item->image)
-                <img src="{{ asset('storage/' . $item->image) }}" alt="商品画像">
+                @if($item->image_path)
+                <img src="{{ asset('storage/'.$item->image_path) }}" alt="商品画像">
                 @else
                 <div class="mypage__thumb-placeholder">商品画像</div>
                 @endif
@@ -39,8 +40,8 @@
         @forelse($sellItems as $item)
         <div class="mypage__card">
             <div class="mypage__thumb">
-                @if($item->image)
-                <img src="{{ asset('storage/' . $item->image) }}" alt="商品画像">
+                @if($item->image_path)
+                <img src="{{ asset('storage/'.$item->image_path) }}" alt="商品画像">
                 @else
                 <div class="mypage__thumb-placeholder">商品画像</div>
                 @endif

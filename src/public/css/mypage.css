@@ -11,13 +11,18 @@
     gap: 24px;
 }
 
+.mypage__icon {
+    width: 80px;
+    height: 80px;
+}
+
 .mypage__icon img,
 .mypage__icon-placeholder {
-    width: 110px;
-    height: 110px;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    background: #d9d9d9;
+    background: #ddd;
 }
 
 .mypage__name {

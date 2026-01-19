@@ -5,6 +5,8 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CommentController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +23,7 @@ Route::get('/',[ItemController::class,'index']);
 Route::get('/item/{item_id}',[ItemController::class,'show']);
 
 Route::middleware('auth')->group(function () {
+Route::post('/item/{item_id}', [CommentController::class, 'store']);
 Route::get('/purchase/{item_id}', [PurchaseController::class, 'index']);
 Route::post('/purchase/{item_id}', [PurchaseController::class, 'store']);
 Route::get('/purchase/address/{item_id}', [PurchaseController::class, 'edit']);
