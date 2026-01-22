@@ -11,11 +11,12 @@ class CommentController extends Controller
 {
     public function store(Request $request, $item_id)
     {
-        $product = Product::findOrFail($item_id);
-
+        if (!Auth::check()) {
+            return redirect()->guest('/login');
+        }
         Comment::create([
             'user_id'    => Auth::id(),
-            'product_id' => $product->id,
+            'product_id' => $item_id,
             'comment'    => $request->comment,
         ]);
         return redirect()->back();

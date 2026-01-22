@@ -13,10 +13,14 @@
     <div class="product-list">
         @foreach($products as $product)
             <div class="product-card">
-                <a href="{{ url('/item/' . $product->id) }}">
-                <img src="{{ asset('storage/'.$product->image_path) }}" alt="{{ $product->name }}">
-                <p class="product-name">{{ $product->name }}</p>
-                </a>
+                @if ($product->is_sold)
+                    <span class="sold-label">SOLD</span>
+                @else
+                    <a href="{{ url('/item/' . $product->id) }}">
+                    <img src="{{ asset('storage/'.$product->image_path) }}" alt="{{ $product->name }}">
+                    <p class="product-name">{{ $product->name }}</p>
+                    </a>
+                @endif
             </div>
         @endforeach
     </div>

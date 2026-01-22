@@ -15,6 +15,10 @@ class ItemController extends Controller
         ->when($keyword, function ($query, $keyword) {
             $query->where('name', 'LIKE', "%{$keyword}%");
         })
+        ->when($user_id, function ($query, $user_id) {
+            $query->where('user_id', '!=', $user_id);
+        })
+        ->latest()
         ->get();
         return view('products', compact('products','keyword'));
     }

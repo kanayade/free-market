@@ -61,6 +61,13 @@
     opacity: 0.9;
 }
 
+.sold-label {
+    color: white;
+    background-color: red;
+    padding: 4px 8px;
+    font-weight: bold;
+}
+
 @media (max-width: 768px) {
     .product-list {
         grid-template-columns: repeat(2, 1fr);

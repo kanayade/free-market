@@ -50,18 +50,16 @@
     <div class="comment-area">
         <h3 class="product-comment">コメント( {{ $product->comments->count() }} )</h3>
         @foreach($product->comments as $comment)
-            <div class="comment-item">
-                <span class="comment-user">{{ $comment->user->name }}</span>
-                <p class="comment-detail">{{ $comment->comment }}</p>
-            </div>
+        <div class="comment-item">
+            <span class="comment-user">{{ $comment->user->name }}</span>
+            <p class="comment-detail">{{ $comment->comment }}</p>
+        </div>
         @endforeach
-        @auth
-            <form class="comment-send" action="{{ url('/item/' . $product->id) }}" method="post">
-                @csrf
-                <textarea name="comment" cols="30" rows="5"></textarea>
-                <button class="comment-send_button">コメントを送信する</button>
-            </form>
-        @endauth
+        <form class="comment-send" action="{{ url('/item/' . $product->id) }}" method="post">
+            @csrf
+            <textarea name="comment" cols="30" rows="5"></textarea>
+            <button class="comment-send_button">コメントを送信する</button>
+        </form>
     </div>
 </div>
 @endsection

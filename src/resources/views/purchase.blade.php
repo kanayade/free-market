@@ -7,7 +7,7 @@
 @section('content')
 <div class="purchase_content">
 
-    <form class="product_purchase" action="/purchase/{{ $product->id }}/checkout" method="post">
+    <form class="product_purchase" action="/purchase/{{ $product->id }}" method="post">
         @csrf
         <div class="purchase_left">
             <div class="purchase_item">

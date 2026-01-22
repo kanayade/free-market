@@ -21,9 +21,11 @@ use App\Http\Controllers\CommentController;
 
 Route::get('/',[ItemController::class,'index']);
 Route::get('/item/{item_id}',[ItemController::class,'show']);
+Route::post('/item/{item_id}', [CommentController::class, 'store']);
+
 
 Route::middleware('auth')->group(function () {
-Route::post('/item/{item_id}', [CommentController::class, 'store']);
+// Route::post('/item/{item_id}', [CommentController::class, 'store']);
 Route::get('/purchase/{item_id}', [PurchaseController::class, 'index']);
 Route::post('/purchase/{item_id}', [PurchaseController::class, 'store']);
 Route::get('/purchase/address/{item_id}', [PurchaseController::class, 'edit']);
