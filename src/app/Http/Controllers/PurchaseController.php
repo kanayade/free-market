@@ -22,13 +22,13 @@ class PurchaseController extends Controller
             return redirect()
                 ->back();
         }
-        DB::transaction(function () use ($product, $user) {
-            // 購入履歴を作成
-            Purchase::create([
+        DB::transaction(function () use ($product, $user, $request) {
+            $product->refresh();
+            Order::create([
                 'product_id'  => $product->id,
                 'user_id' => $user->id,
+                'payment_method' => $request->payment_method
             ]);
-            // 商品を売り切れにする
             $product->update([
                 'is_sold' => true,
             ]);

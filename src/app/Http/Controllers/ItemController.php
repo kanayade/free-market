@@ -10,21 +10,28 @@ class ItemController extends Controller
 {
     public function index(Request $request)
     {
+        $tab = $request->query('tab');
         $keyword = $request->input('keyword');
+        $user_id = Auth::id();
         $products = Product::with('categories')
         ->when($keyword, function ($query, $keyword) {
             $query->where('name', 'LIKE', "%{$keyword}%");
         })
-        ->when($user_id, function ($query, $user_id) {
+        ->when($tab === 'mylist' && $user_id, function ($query) use ($user_id) {
+            $query->whereHas('favorites', function ($q) use ($user_id) {
+                $q->where('user_id', $user_id);
+            });
+        })
+        ->when($tab !== 'mylist' && $user_id, function ($query) use ($user_id) {
             $query->where('user_id', '!=', $user_id);
         })
         ->latest()
         ->get();
-        return view('products', compact('products','keyword'));
+        return view('products', compact('products','keyword','tab'));
     }
     public function show($item_id)
     {
-        $product = Product::findOrFail($item_id);
+        $product = Product::with(['favorites','comments'])->findOrFail($item_id);
         return view('item', compact('product'));
     }
     public function create()

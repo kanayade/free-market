@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Comment;
 use App\Models\Product;
+use App\Http\Requests\CommentRequest;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
-    public function store(Request $request, $item_id)
+    public function store(CommentRequest $request, $item_id)
     {
         if (!Auth::check()) {
             return redirect()->guest('/login');

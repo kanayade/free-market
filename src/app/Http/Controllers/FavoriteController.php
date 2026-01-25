@@ -2,26 +2,27 @@
 
 namespace App\Http\Controllers;
 use App\Models\Favorite;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 
 class FavoriteController extends Controller
 {
-    public function store(Item $item)
+    public function store(Product $product)
     {
         Favorite::firstOrCreate([
             'user_id' => Auth::id(),
-            'item_id' => $item->id,
+            'product_id' => $product->id,
         ]);
 
         return back();
     }
 
-    public function destroy(Item $item)
+    public function destroy(Product $product)
     {
         Favorite::where('user_id', Auth::id())
-            ->where('item_id', $item->id)
+            ->where('product_id', $product->id)
             ->delete();
 
         return back();

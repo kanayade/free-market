@@ -31,4 +31,16 @@ class ExhibitionRequest extends FormRequest
             'price' => 'required|min:0|integer'
         ];
     }
+    public function messages()
+    {
+        return [
+            'name.required' => '商品名を入力してください',
+            'description.required' => '商品説明を入力してください',
+            'description.max' => '商品説明を255文字以内で入力してください',
+            'image_path.required' => '商品画像を登録してください',
+            'image_path.mines' => '画像をpng,jpeg形式で貼ってください',
+            'condition.required' => '状態を選択してください',
+            'price.required' => '金額を入力してください'
+        ];
+    }
 }

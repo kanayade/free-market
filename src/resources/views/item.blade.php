@@ -15,10 +15,21 @@
             <p class="product-brand">{{ $product->brand }}</p>
             <p class="product-price">¥{{ number_format($product->price) }}（税込）</p>
             <div class="detail-icons">
-                <span class="product-likes">
-                    <img src="{{ asset('storage/products/ハートロゴ_デフォルト.png') }}">  {{ $product->likes ?? 0 }}</span>
+                <form action="{{ url('/favorite/' . $product->id) }}" method="post">
+                    @csrf
+                    @if (Auth::check() && $product->isFavoritedBy(Auth::user()))
+                        @method('delete')
+                    @endif
+                    <button class="like-btn" type="submit">
+                        @if (Auth::check() && $product->isFavoritedBy(Auth::user()))
+                            <img src="{{ asset('storage/products/ハートロゴ_ピンク.png') }}">
+                        @else
+                            <img src="{{ asset('storage/products/ハートロゴ_デフォルト.png') }}">
+                        @endif
+                    </button>
+                </form>
                 <span class="product-comment">
-                    <img src="{{ asset('storage/products/ふきだしロゴ.png') }}"> {{ $product->comments->count() ?? 0 }}</span>
+                    <img src="{{ asset('storage/products/ふきだしロゴ.png') }}"> {{ $product->comments->count() }}</span>
             </div>
                 <form class="product-purchase" action="{{ url('/purchase/' . $product->id) }}" method="get">
                     @csrf

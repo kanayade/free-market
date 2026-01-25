@@ -11,7 +11,9 @@
 <body>
     <header class="header_free-market">
         <div class="header__inner">
-            <img src="{{ asset('storage/products/COACHTECHヘッダーロゴ.png') }}">
+            <a href="/">
+                <img src="{{ asset('storage/products/COACHTECHヘッダーロゴ.png') }}">
+            </a>
         </div>
         <div class="header__search">
             <form action="/" method="get" enctype="multipart/form-data">

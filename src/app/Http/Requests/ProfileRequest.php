@@ -30,4 +30,13 @@ class ProfileRequest extends FormRequest
             'user_image' => 'nullable|mimes:png,jpeg'
         ];
     }
+    public function messages()
+    {
+        return [
+            'name.required' => 'お名前を入力してください',
+            'name.max' => 'お名前を20文字以内で入力してください',
+            'postal_code.required' => '郵便番号を入力してください',
+            'address.required' => '住所を入力してください'
+        ];
+    }
 }

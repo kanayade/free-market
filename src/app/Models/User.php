@@ -14,7 +14,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(Product::class, 'user_id');
     }
-    
+
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -50,4 +50,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function Favorites()
+    {
+        return $this->hasMany(Favorite::class);
+    }
 }

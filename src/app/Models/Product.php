@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Favorite;
 
 class Product extends Model
 {
@@ -16,6 +17,7 @@ class Product extends Model
         'image_path',
         'category_id',
         'condition',
+        'is_sold'
     ];
     const CONDITION_LABELS = [
         1 => '良好',
@@ -44,5 +46,17 @@ class Product extends Model
     public function orders()
     {
         return $this->hasMany(Order::class);
+    }
+    public function favorites()
+    {
+        return $this->hasMany(Favorite::class);
+    }
+    public function isFavoritedBy($user)
+    {
+        if (!$user) {
+            return false;
+        }
+
+        return $this->favorites->contains('user_id', $user->id);
     }
 }

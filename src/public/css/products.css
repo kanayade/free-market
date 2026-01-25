@@ -57,13 +57,16 @@
     font-size: 13px;
 }
 
-.product-card a:hover img {
-    opacity: 0.9;
+.product-card {
+    position: relative;
 }
 
 .sold-label {
-    color: white;
-    background-color: red;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: red;
+    color: #fff;
     padding: 4px 8px;
     font-weight: bold;
 }

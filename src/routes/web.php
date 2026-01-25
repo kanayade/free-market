@@ -25,15 +25,14 @@ Route::post('/item/{item_id}', [CommentController::class, 'store']);
 
 
 Route::middleware('auth')->group(function () {
-// Route::post('/item/{item_id}', [CommentController::class, 'store']);
 Route::get('/purchase/{item_id}', [PurchaseController::class, 'index']);
 Route::post('/purchase/{item_id}', [PurchaseController::class, 'store']);
 Route::get('/purchase/address/{item_id}', [PurchaseController::class, 'edit']);
 Route::post('/purchase/address/{item_id}', [PurchaseController::class, 'update']);
 Route::get('/sell', [ItemController::class, 'create']);
 Route::post('/', [ItemController::class, 'store']);
-Route::post('/items/{item}/favorite', [FavoriteController::class, 'store']);
-Route::delete('/items/{item}/favorite', [FavoriteController::class, 'destroy']);
+Route::post('/favorite/{product}', [FavoriteController::class, 'store']);
+Route::delete('/favorite/{product}', [FavoriteController::class, 'destroy']);
 Route::get('/mypage',[UserController::class,'index']);
 Route::post('/mypage',[UserController::class,'update']);
 Route::get('/mypage/edit',[UserController::class,'edit']);
