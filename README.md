@@ -60,6 +60,11 @@ DB_PORT=3306
 ```
 % php artisan migrate --seed
 ```
+## テスト用ユーザー
+
+以下のユーザーでログインして動作確認できます。
+- メールアドレス：test@example.com
+- パスワード：coachtech
 
 ## 使用技術（実行環境）
 ・PHP 8.2<br>
