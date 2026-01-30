@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Http\Requests\ProfileRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
@@ -23,7 +24,7 @@ class UserController extends Controller
 
         return view('mypage', compact('user','page','sellItems','buyItems'));
     }
-    public function update(Request $request)
+    public function update(ProfileRequest $request)
     {
         $user = Auth::user();
         $data = [

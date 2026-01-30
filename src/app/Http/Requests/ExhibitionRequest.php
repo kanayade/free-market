@@ -28,7 +28,10 @@ class ExhibitionRequest extends FormRequest
             'description' => 'required|max:255',
             'image_path' => 'required|mimes:png,jpeg',
             'condition' => 'required|in:1,2,3,4',
-            'price' => 'required|min:0|integer'
+            'price' => 'required|min:0|integer',
+            'categories' => 'required|array',
+            'categories.*' => 'exists:categories,id',
+            'image_path' => 'required|image|mimes:png,jpeg'
         ];
     }
     public function messages()
@@ -38,9 +41,12 @@ class ExhibitionRequest extends FormRequest
             'description.required' => '商品説明を入力してください',
             'description.max' => '商品説明を255文字以内で入力してください',
             'image_path.required' => '商品画像を登録してください',
-            'image_path.mines' => '画像をpng,jpeg形式で貼ってください',
+            'image_path.mimes' => '画像をpng,jpeg形式で貼ってください',
             'condition.required' => '状態を選択してください',
-            'price.required' => '金額を入力してください'
+            'price.required' => '金額を入力してください',
+            'categories.required' => 'カテゴリを選択してください',
+            'image_path.required' => '画像を貼ってください',
+            'image_path.mimes' => '画像をpngもしくはjpeg形式で貼ってください'
         ];
     }
 }

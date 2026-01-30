@@ -17,19 +17,31 @@
             </div>
             <div class="form__label--content">
                 <span class="form__label--item">画像を選択する</span>
-                <input type="file" name="user_image">
+                <input type="file" name="user_image" id="user_image" hidden>
+                @error('user_image')
+                    <p class="form-error">{{ $message }}</p>
+                @enderror
             </div>
             <div class="form__label--content">
                 <span class="form__label--item">ユーザー名</span>
                 <input type="text" name="name" value="{{ old('name', Auth::user()->name) }}">
+                @error('name')
+                    <p class="form-error">{{ $message }}</p>
+                @enderror
             </div>
             <div class="form__label--content">
                 <span class="form__label--item">郵便番号</span>
                 <input type="text" name="postal_code" value="{{ old('postal_code', Auth::user()->postal_code) }}">
+                @error('postal_code')
+                    <p class="form-error">{{ $message }}</p>
+                @enderror
             </div>
             <div class="form__label--content">
                 <span class="form__label--item">住所</span>
                 <input type="text" name="address" value="{{ old('address', Auth::user()->address) }}">
+                @error('address')
+                    <p class="form-error">{{ $message }}</p>
+                @enderror
             </div>
             <div class="form__label--content">
                 <span class="form__label--item">建物名</span>

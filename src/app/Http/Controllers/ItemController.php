@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Requests\ExhibitionRequest;
+
 
 class ItemController extends Controller
 {
@@ -39,7 +41,7 @@ class ItemController extends Controller
         $categories = Category::all();
         return view('sell', compact('categories'));
     }
-    public function store(Request $request)
+    public function store(ExhibitionRequest $request)
     {
         $path = $request->file('image_path')->store('products', 'public');
         $product = Product::create([

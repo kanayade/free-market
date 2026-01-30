@@ -14,6 +14,9 @@
         <div class="product_image">
             <span class="product__detail--title">商品画像</span>
             <input type="file" name="image_path">
+            @error('image_path')
+            <p class="form-error">{{ $message }}</p>
+            @enderror
         </div>
         <hr>
         <h2 class="product_detail">商品の詳細</h2>
@@ -25,6 +28,9 @@
                     {{ $category->name }}
                 </label>
             @endforeach
+            @error('categories')
+            <p class="form-error">{{ $message }}</p>
+            @enderror
         </div>
         <div class="product__condition">
             <span class="product__detail--title">商品の状態</span>
@@ -35,18 +41,30 @@
                 <option value="3">やや傷や汚れあり</option>
                 <option value="4">状態が悪い</option>
             </select>
+            @error('condition')
+            <p class="form-error">{{ $message }}</p>
+            @enderror
         </div>
         <hr>
         <div class="product_content">
             <h3 class="product_detail">商品名と詳細</h3>
             <span class="product__detail--title">商品名</span>
             <input type="text" name="name" value="{{ old('name') }}">
+            @error('name')
+            <p class="form-error">{{ $message }}</p>
+            @enderror
             <span class="product__detail--title">ブランド名</span>
             <input type="text" name="brand" value="{{ old('brand') }}">
             <span class="product__detail--title">商品の説明</span>
             <textarea name="description">{{ old('description') }}</textarea>
+            @error('description')
+            <p class="form-error">{{ $message }}</p>
+            @enderror
             <span class="product__detail--title">販売価格</span>
             ¥ <input type="number" name="price" value="{{ old('price') }}">
+            @error('price')
+            <p class="form-error">{{ $message }}</p>
+            @enderror
         </div>
         <button class="product__sell--button" type="submit">出品する</button>
     </form>

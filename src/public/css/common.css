@@ -76,3 +76,10 @@
 .logout_form {
     display: none;
 }
+
+.form-error {
+    color: #ff4d4f;
+    font-size: 13px;
+    margin-top: 6px;
+    line-height: 1.4;
+}

@@ -2,6 +2,8 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/item.css') }}">
+<link rel="stylesheet" href="{{ asset('css/common.css') }}">
+
 @endsection
 
 @section('content')
@@ -68,7 +70,10 @@
         @endforeach
         <form class="comment-send" action="{{ url('/item/' . $product->id) }}" method="post">
             @csrf
-            <textarea name="comment" cols="30" rows="5"></textarea>
+            <textarea name="comment" cols="30" rows="5">{{ old('comment') }}</textarea>
+            @error('comment')
+            <p class="form-error">{{ $message }}</p>
+            @enderror
             <button class="comment-send_button">コメントを送信する</button>
         </form>
     </div>
