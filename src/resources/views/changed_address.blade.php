@@ -15,12 +15,18 @@
             <div class="form__label--title">
                 <span class="form__label--item">郵便番号</span>
                 <input type="text" name="postal_code" value="{{ old('postal_code', Auth::user()->postal_code) }}">
+                @error('postal_code')
+                <p class="form-error">{{ $message }}</p>
+                @enderror
             </div>
         </div>
         <div class="form__group">
             <div class="form__label--title">
                 <span class="form__label--item">住所</span>
                 <input type="text" name="address" value="{{ old('address', Auth::user()->address) }}">
+                @error('address')
+                <p class="form-error">{{ $message }}</p>
+                @enderror
             </div>
         </div>
         <div class="form__group">

@@ -26,12 +26,11 @@ class ExhibitionRequest extends FormRequest
         return [
             'name' => 'required',
             'description' => 'required|max:255',
-            'image_path' => 'required|mimes:png,jpeg',
+            'image_path' => 'required|image|mimes:png,jpeg',
             'condition' => 'required|in:1,2,3,4',
             'price' => 'required|min:0|integer',
             'categories' => 'required|array',
             'categories.*' => 'exists:categories,id',
-            'image_path' => 'required|image|mimes:png,jpeg'
         ];
     }
     public function messages()
@@ -45,8 +44,6 @@ class ExhibitionRequest extends FormRequest
             'condition.required' => '状態を選択してください',
             'price.required' => '金額を入力してください',
             'categories.required' => 'カテゴリを選択してください',
-            'image_path.required' => '画像を貼ってください',
-            'image_path.mimes' => '画像をpngもしくはjpeg形式で貼ってください'
         ];
     }
 }

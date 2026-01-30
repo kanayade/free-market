@@ -25,9 +25,12 @@
                 <h3 class="payment_which">支払い方法</h3>
                 <select name="payment_method" id="paymentSelect">
                     <option value="">選択してください</option>
-                    <option name="payment_method" value="credit_card">コンビニ払い</option>
-                    <option name="payment_method" value="convenience_store">カード払い</option>
+                    <option name="payment_method" value="convenience_store">コンビニ払い</option>
+                    <option name="payment_method" value="credit_card">カード払い</option>
                 </select>
+            @error('payment_method')
+            <p class="form-error">{{ $message }}</p>
+            @enderror
             </div>
             <hr>
             <div class="purchase_address">
@@ -58,18 +61,18 @@
 </div>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-const select = document.getElementById('paymentSelect');
-const display = document.getElementById('paymentDisplay');
+    const select = document.getElementById('paymentSelect');
+    const display = document.getElementById('paymentDisplay');
 
-const map = {
-    "1": "コンビニ払い",
-    "2": "カード払い",
-    "": "---"
-};
+    const map = {
+        convenience_store: コンビニ払い,
+        credit_card: カード払い,
+    };
 
-const update = () => display.textContent = map[select.value] ?? "---";
-update();
-select.addEventListener('change', update);
+    const update = () => { display.textContent = map[select.value] ?? '---' };
+
+    update();
+    select.addEventListener('change', update);
 });
 </script>
 @endsection

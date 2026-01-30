@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use App\Http\Requests\PurchaseRequest;
+use App\Http\Requests\AddressRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -14,7 +16,7 @@ class PurchaseController extends Controller
         $product = Product::findOrFail($item_id);
         return view('purchase', compact('product'));
     }
-    public function store(Request $request,$item_id)
+    public function store(PurchaseRequest $request,$item_id)
     {
         $user = Auth::user();
         $product = Product::findOrFail($item_id);
@@ -41,7 +43,7 @@ class PurchaseController extends Controller
         $product = Product::findOrFail($item_id);
         return view('changed_address', compact('user','product'));
     }
-    public function update(Request $request, $item_id)
+    public function update(AddressRequest $request, $item_id)
     {
         $user = Auth::user();
         $user->update([
