@@ -60,7 +60,10 @@ DB_PORT=3306
 ```
 % php artisan migrate --seed
 ```
-
+### シンボリックリンク
+```
+% php artisan storage:link
+```
 ### テスト用ユーザー
 
 以下のユーザーでログインして動作確認できます。
