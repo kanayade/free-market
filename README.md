@@ -67,7 +67,11 @@ DB_PORT=3306
 ### テスト用ユーザー
 
 以下のユーザーでログインして動作確認できます。
+出品者
 - メールアドレス：test@example.com
+- パスワード：coachtech
+購入・閲覧者
+- メールアドレス：test2@example.com
 - パスワード：coachtech
 
 ## 使用技術（実行環境）

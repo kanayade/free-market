@@ -65,8 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const display = document.getElementById('paymentDisplay');
 
     const map = {
-        convenience_store: コンビニ払い,
-        credit_card: カード払い,
+        convenience_store: 'コンビニ払い',
+        credit_card: 'カード払い',
     };
 
     const update = () => { display.textContent = map[select.value] ?? '---' };

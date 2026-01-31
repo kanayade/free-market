@@ -14,12 +14,12 @@
         @foreach($products as $product)
             <div class="product-card">
                 @if ($product->is_sold)
-                    <img src="{{ asset('storage/'.$product->image_path) }}" alt="{{ $product->name }}">
+                    <img src="{{ asset('storage/' . $product->image_path) }}" alt="{{ $product->name }}">
                     <span class="sold-label">SOLD</span>
                     <p class="product-name">{{ $product->name }}</p>
                 @else
                     <a href="{{ url('/item/' . $product->id) }}">
-                        <img src="{{ asset('storage/'.$product->image_path) }}" alt="{{ $product->name }}">
+                        <img src="{{ asset('storage/' . $product->image_path) }}" alt="{{ $product->name }}">
                         <p class="product-name">{{ $product->name }}</p>
                     </a>
                 @endif

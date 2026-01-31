@@ -20,7 +20,7 @@ class ProductsTableSeeder extends Seeder
             'price' => '15000',
             'brand' => 'Rolax',
             'description' =>'スタイリッシュなデザインのメンズ腕時計',
-            'image_path' => 'Clock.jpg',
+            'image_path' => 'products/Clock.jpg',
             'condition' =>1
         ];
         DB::table('products')->insert($param);
@@ -30,7 +30,7 @@ class ProductsTableSeeder extends Seeder
             'price' => '5000',
             'brand' => '西芝',
             'description' =>'高速で信頼性の高いハードディスク',
-            'image_path' => 'Disk.jpg',
+            'image_path' => 'products/Disk.jpg',
             'condition' =>2
         ];
         DB::table('products')->insert($param);
@@ -39,7 +39,7 @@ class ProductsTableSeeder extends Seeder
             'name' => '玉ねぎ3束',
             'price' => '300',
             'description' =>'新鮮な玉ねぎ3束のセット',
-            'image_path' => 'onion.jpg',
+            'image_path' => 'products/onion.jpg',
             'condition' =>3
         ];
         DB::table('products')->insert($param);
@@ -48,7 +48,7 @@ class ProductsTableSeeder extends Seeder
             'name' => '革靴',
             'price' => '4000',
             'description' =>'クラシックなデザインの革靴',
-            'image_path' => 'Shoes.jpg',
+            'image_path' => 'products/Shoes.jpg',
             'condition' =>4
         ];
         DB::table('products')->insert($param);
@@ -57,7 +57,7 @@ class ProductsTableSeeder extends Seeder
             'name' => 'ノートPC',
             'price' => '45000',
             'description' =>'高性能なノートパソコン',
-            'image_path' => 'Laptop.jpg',
+            'image_path' => 'products/Laptop.jpg',
             'condition' =>1
         ];
         DB::table('products')->insert($param);
@@ -66,7 +66,7 @@ class ProductsTableSeeder extends Seeder
             'name' => 'マイク',
             'price' => '8000',
             'description' =>'高音質のレコーディング用マイク',
-            'image_path' => 'Mic.jpg',
+            'image_path' => 'products/Mic.jpg',
             'condition' =>2
         ];
         DB::table('products')->insert($param);
@@ -75,7 +75,7 @@ class ProductsTableSeeder extends Seeder
             'name' => 'ショルダーバッグ',
             'price' => '3500',
             'description' =>'おしゃれなショルダーバッグ',
-            'image_path' => 'bag.jpg',
+            'image_path' => 'products/bag.jpg',
             'condition' =>3
         ];
         DB::table('products')->insert($param);
@@ -84,7 +84,7 @@ class ProductsTableSeeder extends Seeder
             'name' => 'タンブラー',
             'price' => '500',
             'description' =>'使いやすいタンブラー',
-            'image_path' => 'Tumbler.jpg',
+            'image_path' => 'products/Tumbler.jpg',
             'condition' =>4
         ];
         DB::table('products')->insert($param);
@@ -94,7 +94,7 @@ class ProductsTableSeeder extends Seeder
             'price' => '4000',
             'brand' => 'Starbacks',
             'description' =>'手動のコーヒーミル',
-            'image_path' => 'Coffee.jpg',
+            'image_path' => 'products/Coffee.jpg',
             'condition' =>1
         ];
         DB::table('products')->insert($param);
@@ -103,7 +103,7 @@ class ProductsTableSeeder extends Seeder
             'name' => 'メイクセット',
             'price' => '2500',
             'description' =>'便利なメイクアップセット',
-            'image_path' => 'makeup.jpg',
+            'image_path' => 'products/makeup.jpg',
             'condition' =>2
         ];
         DB::table('products')->insert($param);
